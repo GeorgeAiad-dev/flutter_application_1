@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // الخلفيات والبطاقات
-  static const Color background = Color(0xFFF6F6FA); // Off-white مائل للبنفسجي الفاتح
+  static const Color background = Color(
+    0xFFF6F6FA,
+  ); // Off-white مائل للبنفسجي الفاتح
   static const Color cardBackground = Colors.white;
-  static const Color secondaryFill = Color(0xFFECEEF8); // خلفية الأزرار الثانوية والمربعات الصغيرة
+  static const Color secondaryFill = Color(
+    0xFFECEEF8,
+  ); // خلفية الأزرار الثانوية والمربعات الصغيرة
 
   // اللون الأساسي (Deep Teal)
   static const Color primaryTeal = Color(0xFF0E6B63);
@@ -59,10 +63,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          textStyle: const TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
-          ),
+          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
         ),
       ),
     );

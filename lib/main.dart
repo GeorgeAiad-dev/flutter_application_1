@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'screens/home_screen.dart';
+import 'screens/my_subscription_screen.dart';
+import 'screens/plans_screen.dart';
+import 'screens/profile_screen.dart';
 import 'theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+    url: 'https://vjudomkqamghtfhjlcmz.supabase.co',
+    anonKey: 'sb_publishable_E65lkio48vvX7t5T_TYpYA_DoxxTmo1',
+  );
+
   runApp(const TheGymApp());
 }
 
@@ -38,21 +49,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         onNavigateToMySubscription: () => setState(() => _selectedIndex = 2),
         onNavigateToProfile: () => setState(() => _selectedIndex = 3),
       ),
-      const _PlaceholderScreen(
-        title: 'Plans',
-        subtitle: 'Coming in Part 3',
-        icon: Icons.card_membership_outlined,
-      ),
-      const _PlaceholderScreen(
-        title: 'My Subscription',
-        subtitle: 'Coming in Part 3',
-        icon: Icons.verified_user_outlined,
-      ),
-      const _PlaceholderScreen(
-        title: 'Profile',
-        subtitle: 'Coming in Part 2',
-        icon: Icons.person_outline,
-      ),
+      const PlansScreen(),
+      const MySubscriptionScreen(),
+      const ProfileScreen(),
     ];
 
     return Scaffold(
@@ -86,44 +85,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             label: 'Profile',
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _PlaceholderScreen extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final IconData icon;
-
-  const _PlaceholderScreen({
-    required this.title,
-    required this.subtitle,
-    required this.icon,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 54, color: AppColors.primaryTeal),
-            const SizedBox(height: 12),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textDark,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(subtitle, style: const TextStyle(color: AppColors.textGrey)),
-          ],
-        ),
       ),
     );
   }

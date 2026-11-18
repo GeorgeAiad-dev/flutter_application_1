@@ -148,3 +148,155 @@ Note: some elements in these images are still open decisions (see the list above
 - Plan is done. George has **not yet chosen** what to do next.
 - Options offered: (a) interactive screen design/prototype, (b) detailed database structure + security rules, (c) start Flutter code.
 - Ask George which one he wants, then proceed **step by step** with explanations.
+# The Gym — Project Brief & Implementation Status
+
+## 1. Project Overview
+* **App Name:** The Gym
+* **Target Platforms:** Android & iOS (Flutter Cross-Platform)
+* **Local Package / Project Folder:** `flutter_application_1`
+* **GitHub Account:** `GeorgeAiad-dev`
+* **Currency:** Egyptian Pound (`EGP`)
+* **Business Model:** Gym membership & special offer browsing, cash-at-reception subscription requests (`Pending` -> `Active`), gym news/announcements, and an integrated Owner/Admin management dashboard.
+
+---
+
+## 2. Design System & Visual Identity (`lib/theme/app_theme.dart`)
+* **UI Style:** Material 3 light theme inspired by Stitch mockups (clean cards, soft rounded corners `22px`, zero elevation with subtle light borders).
+* **Color Palette (`AppColors`):**
+  * **Scaffold Background:** `#F6F6FA` (Off-white with subtle lavender tint)
+  * **Card Background:** `#FFFFFF` (Pure White)
+  * **Secondary Fill / Chips:** `#ECEEF8`
+  * **Primary Brand Color:** `#0E6B63` (Deep Teal) & `#E2F1EF` (Light Teal tint)
+  * **Typography Colors:** `#14171A` (Dark Charcoal) & `#6E7681` (Muted Grey)
+  * **Status Badges:** `#E3F7EA` background / `#15803D` text for `Active` memberships.
+
+---
+
+## 3. Project Architecture (`lib/`)
+```text
+lib/
+├── main.dart                          # App entry point, Theme setup & 4-tab Bottom NavigationBar
+├── theme/
+│   └── app_theme.dart                 # AppColors & AppTheme definitions
+├── data/
+│   └── sample_data.dart               # Data models & mock data (Member, Offers, News, Plans, History, Notifications)
+└── screens/
+    ├── home_screen.dart               # Home dashboard (Header, Current Membership, Offers carousel, Latest News)
+    ├── offers_screens.dart            # OffersListScreen & OfferDetailsScreen
+    ├── news_screens.dart              # NewsListScreen & NewsDetailsScreen
+    ├── auth_screens.dart              # LoginScreen & SignUpScreen with form validation
+    ├── profile_screen.dart            # ProfileScreen, EditProfileScreen & Admin Dashboard entry
+    ├── plans_screen.dart              # PlansScreen with subscription request confirmation dialog
+    ├── my_subscription_screen.dart    # Current active membership details & subscription history
+    ├── notifications_screen.dart      # In-app notifications list
+    └── admin_panel_screen.dart        # AdminPanelScreen (Requests, Members, Manage tabs)
+# The Gym — Project Brief & Implementation Status (End of Session 06)
+
+## 1. Project Overview
+* **App Name:** The Gym
+* **Target Platforms:** Android & iOS (Flutter Cross-Platform)
+* **Local Package / Project Folder:** `flutter_application_1`
+* **GitHub Account:** `GeorgeAiad-dev`
+* **Currency:** Egyptian Pound (`EGP`)
+* **Backend & Database:** Supabase (`vjudomkqamghtfhjlcmz`)
+* **Business Model:** Gym membership & special offer browsing, cash-at-reception subscription requests (`pending` -> `active`), gym news/announcements, and an integrated Owner/Admin management dashboard.
+
+---
+
+## 2. Design System & Visual Identity (`lib/theme/app_theme.dart`)
+* **UI Style:** Material 3 light theme (clean cards, soft rounded corners `22px`, zero elevation with subtle light borders).
+* **Color Palette (`AppColors`):**
+  * **Scaffold Background:** `#F6F6FA`
+  * **Card Background:** `#FFFFFF`
+  * **Secondary Fill / Chips:** `#ECEEF8`
+  * **Primary Brand Color:** `#0E6B63` (Deep Teal) & `#E2F1EF` (Light Teal tint)
+  * **Typography Colors:** `#14171A` (Dark Charcoal) & `#6E7681` (Muted Grey)
+  * **Status Badges:** `#E3F7EA` background / `#15803D` text for `Active` memberships.
+
+---
+
+## 3. Supabase Database Schema & Security (Completed in Session 06)
+* **Authentication:** Email + Password enabled (`Confirm email` disabled for rapid testing); automatic profile creation trigger (`handle_new_user`) inserts new signups into `public.profiles` with default role `'member'`.
+* **Tables Created with Row Level Security (RLS):**
+  1. `public.profiles` (`id`, `full_name`, `phone`, `email`, `role` [`member`/`admin`], `created_at`) — Users view/update own profile; admins view all.
+  2. `public.plans` (`id`, `name`, `duration_text`, `duration_days`, `price`, `description`, `is_best_value`, `created_at`) — Public read; admin write. Seeded with 3 plans (`1 Month`, `3 Months`, `12 Months`).
+  3. `public.offers` (`id`, `title`, `subtitle`, `description`, `badge`, `price`, `old_price`, `valid_until`, `image_url`, `created_at`) — Public read; admin write. Seeded with 3 offers.
+  4. `public.news` (`id`, `title`, `date_text`, `body`, `image_url`, `created_at`) — Public read; admin write. Seeded with 2 news posts.
+  5. `public.subscription_requests` (`id`, `user_id`, `plan_name`, `price`, `status` [`pending`/`active`/`rejected`/`expired`/`cancelled`], `start_date`, `end_date`, `created_at`) — Users create/view own requests; admins view/update all.
+
+---
+
+## 4. Project Architecture (`lib/`)
+```text
+lib/
+├── main.dart                          # Supabase initialization, Theme setup & 4-tab Bottom NavigationBar
+├── theme/
+│   └── app_theme.dart                 # AppColors & AppTheme definitions
+├── data/
+│   └── sample_data.dart               # Mock data models (used temporarily by Home/Plans/Offers/News until Session 07)
+└── screens/
+    ├── home_screen.dart               # Home dashboard (Header, Current Membership, Offers carousel, Latest News)
+    ├── offers_screens.dart            # OffersListScreen & OfferDetailsScreen
+    ├── news_screens.dart              # NewsListScreen & NewsDetailsScreen
+    ├── auth_screens.dart              # Live Supabase Auth LoginScreen & SignUpScreen
+    ├── profile_screen.dart            # Live Supabase ProfileScreen (Guest/Member/Admin states), EditProfileScreen & Admin entry
+    ├── plans_screen.dart              # PlansScreen with subscription request dialog
+    ├── my_subscription_screen.dart    # Current active membership details & subscription history
+    ├── notifications_screen.dart      # In-app notifications list
+    └── admin_panel_screen.dart        # AdminPanelScreen (Requests, Members, Manage tabs)
+    # The Gym — Project Brief & Implementation Status (End of Session 07)
+
+## 1. Project Overview
+* **App Name:** The Gym
+* **Target Platforms:** Android & iOS (Flutter Cross-Platform)
+* **Local Package / Project Folder:** `flutter_application_1`
+* **GitHub Account:** `GeorgeAiad-dev`
+* **Currency:** Egyptian Pound (`EGP`)
+* **Backend & Database:** Supabase (`vjudomkqamghtfhjlcmz`)
+* **Business Model:** Gym membership & special offer browsing, wishlist saving, cash-at-reception subscription requests (`pending` -> `active`), gym news/announcements, and an integrated Owner/Admin management dashboard with real image uploads.
+
+---
+
+## 2. Design System & Visual Identity (`lib/theme/app_theme.dart`)
+* **UI Style:** Material 3 light theme (clean cards, soft rounded corners `22px`, zero elevation with subtle light borders).
+* **Color Palette (`AppColors`):**
+  * **Scaffold Background:** `#F6F6FA`
+  * **Card Background:** `#FFFFFF`
+  * **Secondary Fill / Chips:** `#ECEEF8`
+  * **Primary Brand Color:** `#0E6B63` (Deep Teal) & `#E2F1EF` (Light Teal tint)
+  * **Typography Colors:** `#14171A` (Dark Charcoal) & `#6E7681` (Muted Grey)
+  * **Status Badges:** `#E3F7EA` background / `#15803D` text for `Active` memberships.
+
+---
+
+## 3. Supabase Database Schema, Storage & Security (Completed)
+* **Authentication:** Email + Password enabled; automatic profile creation trigger inserts new signups into `public.profiles` with default role `'member'`. Security-definer helper function `public.is_admin()` prevents RLS recursion when verifying admin access.
+* **Storage Bucket:** `gym-images` (public read access; authenticated upload access) for storing uploaded offer and news images.
+* **Tables Created with Row Level Security (RLS):**
+  1. `public.profiles` (`id`, `full_name`, `phone`, `email`, `role` [`member`/`admin`], `created_at`) — Users view/update own profile; admins view all.
+  2. `public.plans` (`id`, `name`, `duration_text`, `duration_days`, `price`, `description`, `is_best_value`, `created_at`) — Public read; admin insert/delete.
+  3. `public.offers` (`id`, `title`, `subtitle`, `description`, `badge`, `price`, `old_price`, `valid_until`, `image_url`, `created_at`) — Public read; admin insert/delete.
+  4. `public.news` (`id`, `title`, `date_text`, `body`, `image_url`, `created_at`) — Public read; admin insert/delete.
+  5. `public.subscription_requests` (`id`, `user_id`, `plan_name`, `price`, `status` [`pending`/`active`/`rejected`/`expired`/`cancelled`], `start_date`, `end_date`, `created_at`) — Users create/view own requests and cancel pending ones; admins view/update all.
+  6. `public.saved_offers` (`id`, `user_id`, `offer_id`, `created_at`) — Per-user wishlist protected by RLS (`auth.uid() = user_id`).
+
+---
+
+## 4. Project Architecture (`lib/`)
+```text
+lib/
+├── main.dart                          # Supabase initialization, Theme setup & 4-tab Bottom NavigationBar
+├── theme/
+│   └── app_theme.dart                 # AppColors & AppTheme definitions
+├── data/
+│   └── sample_data.dart               # Legacy mock models (no longer used by live screens)
+└── screens/
+    ├── home_screen.dart               # Live Home dashboard (Member greeting, Active/Pending banner, Offers, News)
+    ├── offers_screens.dart            # Live OffersListScreen (search, badge/saved filters, wishlist) & OfferDetailsScreen
+    ├── news_screens.dart              # Live NewsListScreen & NewsDetailsScreen
+    ├── auth_screens.dart              # Live Supabase Auth LoginScreen & SignUpScreen
+    ├── profile_screen.dart            # Live Supabase ProfileScreen (Guest/Member/Admin states), EditProfileScreen & Admin entry
+    ├── plans_screen.dart              # Live PlansScreen with duplicate-pending guard & cash subscription request dialog
+    ├── my_subscription_screen.dart    # Live active membership countdown, pending cancellation & subscription history
+    ├── notifications_screen.dart      # In-app notifications list
+    └── admin_panel_screen.dart        # Live AdminPanelScreen (Approve/Reject requests, Members list, Add/Delete Plans/Offers/News + image_picker upload)
