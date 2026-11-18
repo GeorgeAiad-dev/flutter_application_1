@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#001f26", "tertiary-fixed": "#acedff", "secondary-fixed-dim": "#4edea3", "on-tertiary": "#003640", "primary-container": "#84cc16", "secondary": "#4edea3", "inverse-surface": "#dfe2ee", "inverse-on-surface": "#2c3039", "on-error-container": "#ffdad6", "surface-container-high": "#262a33", "on-surface": "#dfe2ee", "on-secondary-fixed-variant": "#005236", "surface-tint": "#91db2a", "background": "#0f131c", "tertiary-container": "#37c9e7", "on-surface-variant": "#c1cab0", "secondary-fixed": "#6ffbbe", "surface-dim": "#0f131c", "surface-container": "#1c2028", "outline": "#8b947d", "surface-variant": "#31353e", "error-container": "#93000a", "tertiary": "#74e3ff", "primary": "#9ee939", "surface": "#0f131c", "tertiary-fixed-dim": "#4cd7f6", "secondary-container": "#00a572", "on-primary-fixed": "#102000", "on-secondary-container": "#00311f", "outline-variant": "#424936", "on-background": "#dfe2ee", "on-primary": "#1f3700", "on-tertiary-container": "#00515f", "surface-container-low": "#181c24", "on-secondary": "#003824", "surface-container-highest": "#31353e", "inverse-primary": "#416900", "surface-bright": "#353942", "error": "#ffb4ab", "on-primary-fixed-variant": "#304f00", "primary-fixed-dim": "#91db2a", "primary-fixed": "#acf847", "on-primary-container": "#315200", "on-secondary-fixed": "#002113", "surface-container-lowest": "#0a0e16", "on-tertiary-fixed-variant": "#004e5c", "on-error": "#690005" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter": "1rem", "margin": "1.25rem", "space-xs": "0.25rem", "space-md": "1rem", "space-xl": "2rem" }, fontFamily: { "display-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "stat-metric": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"] }, fontSize: { "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "800" }], "headline-lg": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "headline-xl": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }], "stat-metric": ["24px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "800" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.06em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "400" }], "title-md": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.35)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 -ml-2 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="Apex Gym Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrCd3YIZB3egf_9wChGxUIoj6AHEakEs1vMPdaHxUYSPN_xWCEVkdlyzIObBRXdM9hsrjyUtywx-UZrT3nQ8Uhn-mOxT1pdM-HVrjCAeeTYOE_tafJIMgBpkp75XlR8m3wFIN1PudcTsQBkuls3xqnmpwztZVblo9eKTAskCnUKgLNy4v-GDjrVHfMeTUq2EujC6vLA_WcjNiHQMnwgRfnEgyFMpX_4Cs9rHYriMMNbi"/><h1 class="font-title-md text-title-md text-on-surface">Plan Checkout</h1></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvlqzP12uMfazFVBTLzcRPHJTJe8DSLZqh-fnw9tC99A_ionfw7UFPk75sadzDXUUVom8FbzJWvIrwo-PWvuK-3dOvoEQ__-_ZXxHvLL5yGkMO9F0GYVja1SM3q3gbQ747tNuGQy3r0zhgNjOhCgFUlZLU5CWN5dK4jUkZu669HqV8vzZDnCFyvXOlXvCZyWmS7WocaIWYR5fFy7ptFJ8-LJyy3jYgUPv3_uETUCRj"/></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-24 space-y-space-md">
+<!-- Title & Context Intro -->
+<div class="flex flex-col space-y-space-xs pt-space-sm">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/20 text-secondary text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+        ADMIN CONSOLE
+      </span>
+<span class="text-on-surface-variant text-label-md font-label-md">3 Active Tiers</span>
+</div>
+<h2 class="text-headline-xl font-headline-xl text-on-surface tracking-tight">Gym Membership Plans</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Create and manage access subscriptions offered directly to gym members.</p>
+</div>
+<!-- Plans Bento/Card List -->
+<div class="flex flex-col space-y-space-md">
+<!-- Card 1: 1 Month Plan -->
+<div class="group relative rounded-xl bg-surface-container-high p-space-md transition-all shadow-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="text-title-md font-title-md text-on-surface truncate">1 Month</h3>
+</div>
+<p class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 30 Days duration
+            </p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer select-none">
+<input checked="" class="sr-only peer" onchange="togglePlanStatus(this, '1 Month')" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface peer-checked:bg-primary-container after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block">Rate</span>
+<div class="flex items-baseline gap-1">
+<span class="text-stat-metric font-stat-metric text-primary">500</span>
+<span class="text-label-md font-label-md text-on-surface-variant">EGP</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit 1 Month Plan" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="openEditModal('1 Month', '30', '500', true)">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Delete 1 Month Plan" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-error hover:bg-error-container/40 transition-colors" onclick="promptDelete('1 Month')">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: 3 Months Plan (Highlighted Best Value) -->
+<div class="relative rounded-xl bg-surface-container-high p-space-md shadow-md overflow-hidden">
+<!-- Bioluminescent Accent Glow Backdrop -->
+<div class="absolute -top-12 -right-12 w-28 h-28 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-space-sm relative">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="text-title-md font-title-md text-on-surface truncate">3 Months</h3>
+<span class="px-2 py-0.5 rounded-full bg-primary/20 text-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                BEST VALUE
+              </span>
+</div>
+<p class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 90 Days duration
+            </p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer select-none">
+<input checked="" class="sr-only peer" onchange="togglePlanStatus(this, '3 Months')" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface peer-checked:bg-primary-container after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between relative">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block">Rate</span>
+<div class="flex items-baseline gap-1">
+<span class="text-stat-metric font-stat-metric text-primary">1,300</span>
+<span class="text-label-md font-label-md text-on-surface-variant">EGP</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit 3 Months Plan" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="openEditModal('3 Months (Best Value)', '90', '1300', true)">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Delete 3 Months Plan" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-error hover:bg-error-container/40 transition-colors" onclick="promptDelete('3 Months')">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: 12 Months VIP -->
+<div class="group relative rounded-xl bg-surface-container-high p-space-md transition-all shadow-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="text-title-md font-title-md text-on-surface truncate">12 Months (VIP)</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-variant text-tertiary font-label-sm text-label-sm">VIP ACCESS</span>
+</div>
+<p class="text-label-md font-label-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 365 Days duration
+            </p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer select-none">
+<input checked="" class="sr-only peer" onchange="togglePlanStatus(this, '12 Months')" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface peer-checked:bg-primary-container after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block">Rate</span>
+<div class="flex items-baseline gap-1">
+<span class="text-stat-metric font-stat-metric text-primary">4,500</span>
+<span class="text-label-md font-label-md text-on-surface-variant">EGP</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit 12 Months Plan" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="openEditModal('12 Months (VIP)', '365', '4500', true)">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button aria-label="Delete 12 Months Plan" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-error hover:bg-error-container/40 transition-colors" onclick="promptDelete('12 Months')">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Plan Analytics Micro Card -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-bold text-on-surface">Most Subscribed Tier</h4>
+<p class="text-label-md font-label-md text-on-surface-variant">68% choose 3 Months (Best Value)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">insights</span>
+</div>
+<!-- Floating Action Button (FAB) -->
+<div class="fixed right-margin bottom-6 z-40">
+<button aria-label="Add new plan" class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_4px_24px_rgba(158,233,57,0.4)] active:scale-95 transition-transform" onclick="openAddModal()">
+<span class="material-symbols-outlined text-[32px] font-bold">add</span>
+</button>
+</div>
+<!-- Add / Edit Plan Bottom Sheet Modal -->
+<div class="fixed inset-0 z-50 flex items-end justify-center bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" id="planModal">
+<div class="w-full max-w-lg bg-surface-container-high rounded-t-3xl p-margin pb-10 flex flex-col space-y-space-md translate-y-full transition-transform duration-300 max-h-[795px] overflow-y-auto shadow-2xl" id="sheetContent">
+<!-- Top Handle Bar -->
+<div class="w-full flex justify-center py-1">
+<div class="w-12 h-1.5 rounded-full bg-surface-bright"></div>
+</div>
+<!-- Sheet Header -->
+<div class="flex items-center justify-between">
+<div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface" id="modalTitle">Add / Edit Plan</h3>
+<p class="text-label-md font-label-md text-on-surface-variant mt-0.5">Configure membership parameters</p>
+</div>
+<button aria-label="Close modal" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Sheet Form Inputs -->
+<form class="space-y-space-md" id="planForm" onsubmit="handleFormSubmit(event)">
+<!-- Field 1: Plan Name -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-on-surface-variant">Plan Name</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">badge</span>
+<input class="w-full h-[52px] bg-surface-container text-on-surface placeholder:text-outline rounded-xl pl-11 pr-4 text-body-md font-body-md focus:outline-none focus:bg-surface-bright focus:ring-1 focus:ring-primary transition-all" id="inputPlanName" placeholder="e.g. 6 Months Plan" required="" type="text"/>
+</div>
+</div>
+<!-- Field 2: Duration in Days -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-on-surface-variant">Duration (Days)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">timelapse</span>
+<input class="w-full h-[52px] bg-surface-container text-on-surface placeholder:text-outline rounded-xl pl-11 pr-4 text-body-md font-body-md focus:outline-none focus:bg-surface-bright focus:ring-1 focus:ring-primary transition-all" id="inputPlanDuration" placeholder="180" required="" type="number"/>
+</div>
+</div>
+<!-- Field 3: Price in EGP -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-on-surface-variant">Price (EGP)</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">payments</span>
+<input class="w-full h-[52px] bg-surface-container text-on-surface placeholder:text-outline rounded-xl pl-11 pr-4 text-body-md font-body-md focus:outline-none focus:bg-surface-bright focus:ring-1 focus:ring-primary transition-all" id="inputPlanPrice" placeholder="2,400 EGP" required="" type="text"/>
+</div>
+</div>
+<!-- Field 4: Active status toggle -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container">
+<div class="flex items-center gap-space-sm pr-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">visibility</span>
+<div>
+<span class="text-body-md font-body-md font-semibold text-on-surface block">Show plan in member app</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Allows self-service subscription checkouts</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer select-none flex-shrink-0">
+<input checked="" class="sr-only peer" id="inputPlanStatus" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface peer-checked:bg-primary-container after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-fixed after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<!-- Sheet Action Buttons -->
+<div class="grid grid-cols-2 gap-space-sm pt-2">
+<button class="w-full h-12 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-bright transition-colors" onclick="closeModal()" type="button">
+            Cancel
+          </button>
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-label-md text-label-md shadow-[0_2px_12px_rgba(158,233,57,0.3)] hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-1.5" type="submit">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+            Save Plan
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-bright text-on-surface text-label-md font-label-md shadow-xl opacity-0 pointer-events-none transition-all duration-300" id="toast">
+<span class="material-symbols-outlined text-primary text-[18px]">check</span>
+<span id="toastMessage">Plan updated successfully</span>
+</div>
+</div>
+<script>
+  function openAddModal() {
+    const modal = document.getElementById('planModal');
+    const sheet = document.getElementById('sheetContent');
+    const title = document.getElementById('modalTitle');
+    
+    title.innerText = 'Create New Plan';
+    document.getElementById('planForm').reset();
+    document.getElementById('inputPlanStatus').checked = true;
+
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    sheet.classList.remove('translate-y-full');
+  }
+
+  function openEditModal(name, duration, price, active) {
+    const modal = document.getElementById('planModal');
+    const sheet = document.getElementById('sheetContent');
+    const title = document.getElementById('modalTitle');
+    
+    title.innerText = 'Edit Plan';
+    document.getElementById('inputPlanName').value = name;
+    document.getElementById('inputPlanDuration').value = duration;
+    document.getElementById('inputPlanPrice').value = price + ' EGP';
+    document.getElementById('inputPlanStatus').checked = active;
+
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    sheet.classList.remove('translate-y-full');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('planModal');
+    const sheet = document.getElementById('sheetContent');
+    
+    sheet.classList.add('translate-y-full');
+    modal.classList.add('opacity-0', 'pointer-events-none');
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    closeModal();
+    showToast('Membership plan saved successfully!');
+  }
+
+  function togglePlanStatus(toggleEl, planName) {
+    const statusText = toggleEl.checked ? 'activated' : 'deactivated';
+    showToast(`${planName} has been ${statusText}`);
+  }
+
+  function promptDelete(planName) {
+    if (confirm(`Are you sure you want to remove the "${planName}" plan from active listings?`)) {
+      showToast(`Removed "${planName}" plan`);
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = message;
+    
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-2');
+
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-2');
+    }, 2800);
+  }
+
+  // Dismiss bottom sheet if tapped outside
+  document.getElementById('planModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+</script></main></body></html>

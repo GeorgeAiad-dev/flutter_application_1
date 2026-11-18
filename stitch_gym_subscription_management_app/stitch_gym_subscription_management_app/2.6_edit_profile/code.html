@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#0f131c;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed-dim": "#91db2a", "inverse-on-surface": "#2c3039", "surface-container-highest": "#31353e", "on-surface-variant": "#c1cab0", "on-primary-fixed": "#102000", "surface-bright": "#353942", "on-primary-fixed-variant": "#304f00", "primary-container": "#84cc16", "tertiary-container": "#37c9e7", "on-primary": "#1f3700", "surface-tint": "#91db2a", "surface-container-low": "#181c24", "background": "#0f131c", "tertiary-fixed-dim": "#4cd7f6", "on-tertiary-fixed": "#001f26", "surface-variant": "#31353e", "primary-fixed": "#acf847", "on-tertiary-container": "#00515f", "on-surface": "#dfe2ee", "error-container": "#93000a", "on-background": "#dfe2ee", "on-tertiary": "#003640", "surface": "#0f131c", "surface-container-lowest": "#0a0e16", "on-secondary-container": "#00311f", "secondary": "#4edea3", "inverse-surface": "#dfe2ee", "on-error": "#690005", "surface-container-high": "#262a33", "error": "#ffb4ab", "secondary-fixed-dim": "#4edea3", "secondary-fixed": "#6ffbbe", "inverse-primary": "#416900", "on-primary-container": "#315200", "surface-container": "#1c2028", "secondary-container": "#00a572", "on-secondary-fixed-variant": "#005236", "tertiary-fixed": "#acedff", "on-error-container": "#ffdad6", "primary": "#9ee939", "tertiary": "#74e3ff", "outline-variant": "#424936", "on-secondary": "#003824", "on-tertiary-fixed-variant": "#004e5c", "outline": "#8b947d", "on-secondary-fixed": "#002113", "surface-dim": "#0f131c" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem", "margin": "1.25rem", "space-xl": "2rem", "gutter": "1rem", "space-lg": "1.5rem" }, fontFamily: { "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "stat-metric": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.06em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "400" }], "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "800" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "title-md": ["18px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }], "headline-lg": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "stat-metric": ["24px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "800" }], "headline-xl": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 -ml-space-xs flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-title-md text-title-md text-on-surface tracking-tight leading-none truncate max-w-[200px]">Edit Profile</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-10">
+<!-- Top Ambient Glow Aura -->
+<div class="relative w-full overflow-hidden flex flex-col items-center pt-4 pb-2 px-margin">
+<div class="absolute -top-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-16 -right-10 w-44 h-44 bg-tertiary/10 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Avatar Upload Node -->
+<div class="relative group mt-2 mb-3">
+<div class="relative w-28 h-28 rounded-full p-1 bg-gradient-to-b from-primary/40 via-surface-variant to-transparent shadow-xl">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Athletic Middle Eastern man in early 30s with trimmed beard wearing a dark gym compression shirt looking confident in a high-tech boutique fitness center with neon lime accents and ambient cinematic moody dark lighting" id="avatar-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD26WLtfFSq_KpXloJfIfwjcjq74LIFgb57h5QJoVrzfvztSJvndayOY0yNFfmaTCwzUe0p2klGKMH0LQEG92PubRXXs3DMEkxWNk-cKwmerJ_Af_ircD-CV_Z_fsA2yD6wFnjBEMyxQUmwZoWUcRtCWeNC0z7NWcw3abBTjWBTAeuSw_9vZKNQQBt7OC3oCFnROiJtXVkDZnYzlngVcJLvQCUiBIfcCsr7ylLitP2z"/>
+</div>
+</div>
+<!-- Camera Action Trigger Badge -->
+<label class="absolute bottom-0 right-0 w-10 h-10 rounded-full bg-primary hover:bg-primary-fixed text-on-primary flex items-center justify-center shadow-[0_4px_16px_rgba(158,233,57,0.4)] cursor-pointer active:scale-95 transition-transform" for="avatar-input">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+<input accept="image/*" class="sr-only" id="avatar-input" onchange="previewAvatar(event)" type="file"/>
+</label>
+</div>
+<!-- User Identity Snippet -->
+<div class="text-center mb-4">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high/80 mb-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase">Active Tier 1 Athlete</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Member ID: #ATH-8842</p>
+</div>
+</div>
+<!-- Form Body -->
+<form class="flex flex-col gap-space-lg px-margin" id="edit-profile-form" onsubmit="event.preventDefault(); triggerSaveFeedback();">
+<!-- Primary Credentials Card -->
+<div class="flex flex-col gap-4 p-5 rounded-2xl bg-surface-container-high/60 backdrop-blur-md shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Core Identity</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Required</span>
+</div>
+<!-- Full Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="fullname">Full Name</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant text-[20px]">person</span>
+<input class="w-full h-[52px] pl-12 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-0 focus:bg-surface-container-low transition-colors shadow-inner" id="fullname" name="fullname" placeholder="Your name" required="" type="text" value="Mohamed Ahmed"/>
+</div>
+</div>
+<!-- Phone with Egypt Indicator -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="phone">Mobile Number</label>
+<div class="relative flex items-center">
+<!-- Flag / Country Prefix Token -->
+<div class="absolute left-3 flex items-center gap-1.5 px-2 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md select-none">
+<svg class="w-4 h-3 rounded-sm shadow-sm flex-shrink-0" viewbox="0 0 640 480">
+<rect fill="#ce1126" height="160" width="640"></rect>
+<rect fill="#ffffff" height="160" width="640" y="160"></rect>
+<rect fill="#000000" height="160" width="640" y="320"></rect>
+<polygon fill="#c09300" points="320,220 330,240 310,240"></polygon>
+</svg>
+<span class="text-on-surface font-semibold tracking-tight">+20</span>
+</div>
+<input class="w-full h-[52px] pl-24 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-0 focus:bg-surface-container-low transition-colors shadow-inner" id="phone" name="phone" placeholder="100 000 0000" required="" type="tel" value="100 234 5678"/>
+</div>
+</div>
+<!-- Email Address -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="email">Email Address</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant text-[20px]">alternate_email</span>
+<input class="w-full h-[52px] pl-12 pr-10 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-0 focus:bg-surface-container-low transition-colors shadow-inner" id="email" name="email" placeholder="you@domain.com" required="" type="email" value="mohamed.ahmed@example.com"/>
+<span class="material-symbols-outlined absolute right-3 text-secondary text-[18px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Secondary & Club Perks Section -->
+<div class="flex flex-col gap-4 p-5 rounded-2xl bg-surface-container-high/60 backdrop-blur-md shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">shield_with_heart</span>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Club Safety &amp; Logistics</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Optional</span>
+</div>
+<!-- Emergency Contact -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface-variant" for="emergency-contact">Emergency Contact</label>
+<span class="font-label-sm text-label-sm text-tertiary">Recommended</span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-on-surface-variant text-[20px]">contact_emergency</span>
+<input class="w-full h-[52px] pl-12 pr-4 rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:ring-0 focus:bg-surface-container-low transition-colors shadow-inner" id="emergency-contact" name="emergency-contact" placeholder="Name &amp; contact phone" type="text" value="Layla Ahmed (+20 100 882 1199)"/>
+</div>
+</div>
+<!-- Permanent Locker Token Card -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest shadow-inner">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Assigned Locker</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Locker #42</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm">VIP Zone A</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Smart Key Linked</span>
+</div>
+</div>
+</div>
+<!-- Biometric Access Pill Note -->
+<div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0">fingerprint</span>
+<p class="font-label-md text-label-md text-on-surface-variant leading-snug">
+        Updates sync instantly with your kinetic QR badge and turnstile biometrics.
+      </p>
+</div>
+<!-- Form CTA Action Buttons -->
+<div class="flex flex-col gap-3 pt-2">
+<!-- Neon Lime Primary Action -->
+<button class="relative w-full h-[54px] rounded-xl bg-primary hover:bg-primary-fixed text-on-primary font-title-md text-title-md font-bold tracking-wide flex items-center justify-center gap-2 shadow-[0_4px_24px_rgba(158,233,57,0.3)] active:scale-[0.98] transition-all cursor-pointer" id="save-button" type="submit">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+<span>Save changes</span>
+</button>
+<!-- Muted Secondary Dismiss Button -->
+<button class="w-full h-11 rounded-xl bg-transparent hover:bg-surface-container-high/50 text-on-surface-variant hover:text-on-surface font-title-md text-title-md transition-colors flex items-center justify-center cursor-pointer" onclick="history.back()" type="button">
+        Cancel
+      </button>
+</div>
+</form>
+<!-- Notification Toast Modal Slot -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-4 transition-all duration-300 flex items-center gap-2 px-4 py-3 rounded-full bg-surface-bright text-on-surface shadow-2xl" id="toast-pill">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Profile updated successfully</span>
+</div>
+</div>
+<script>
+  function previewAvatar(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.getElementById('avatar-image');
+        if (img) {
+          img.src = e.target.result;
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function triggerSaveFeedback() {
+    const btn = document.getElementById('save-button');
+    const toast = document.getElementById('toast-pill');
+    
+    if (btn) {
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[22px]">progress_activity</span><span>Syncing...</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[22px]">done_all</span><span>Saved</span>';
+        btn.classList.add('bg-secondary', 'text-on-secondary');
+        
+        if (toast) {
+          toast.classList.remove('opacity-0', 'translate-y-4');
+          toast.classList.add('opacity-100', 'translate-y-0');
+          setTimeout(() => {
+            toast.classList.add('opacity-0', 'translate-y-4');
+            toast.classList.remove('opacity-100', 'translate-y-0');
+          }, 2400);
+        }
+
+        setTimeout(() => {
+          btn.innerHTML = '<span class="material-symbols-outlined text-[22px]">check_circle</span><span>Save changes</span>';
+          btn.classList.remove('bg-secondary', 'text-on-secondary');
+        }, 3000);
+      }, 600);
+    }
+  }
+</script></main></body></html>
