@@ -1,17 +1,23 @@
-# flutter_application_1
+# The Gym
 
-A new Flutter project.
+A cross-platform Flutter mobile application for gym members and administrators to browse membership plans, explore special offers, read gym announcements, and manage cash-at-reception subscription requests.
 
-## Getting Started
+## Who It Is For
+- **Gym Members & Visitors:** Browse membership plans, save favorite offers, submit subscription requests, and track active membership countdowns.
+- **Gym Owners & Admins:** Review and approve/reject pending cash subscription requests, view registered members, and publish or delete plans, offers, and gym news with real photos.
 
-This project is a starting point for a Flutter application.
+## Key Features
+- **Public & Member Browsing:** Live feed of active promotions, membership plans, and gym announcements.
+- **Search & Wishlist:** Search special offers by keyword, filter by badge or saved items, and bookmark favorite offers per user account.
+- **Cash Subscription Flow:** Members request plans with duplicate-pending protection and cancel pending requests anytime; admins activate or reject requests with automatic membership duration calculation.
+- **Authentication & Account Management:** Email/password login and registration, inline validation alerts, password recovery via email, and profile editing.
+- **Integrated Admin Dashboard:** Role-protected management panel for handling requests, viewing members, and creating/deleting plans, offers, and news with gallery image uploads.
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
+- **Frontend:** Flutter & Dart (Material 3 UI)
+- **Backend & Database:** Supabase (PostgreSQL with Row Level Security)
+- **Authentication & Storage:** Supabase Auth & Supabase Storage (`gym-images` bucket)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project Scope & Limitations
+- Payments are handled offline (cash at gym reception) rather than through an online payment gateway.
+- Built as a training and portfolio project (`v1.0.0`) and has not undergone a formal third-party penetration or security audit.
