@@ -67,6 +67,106 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  Future<void> _showResetPasswordDialog() async {
+    final resetEmailCtrl = TextEditingController(
+      text: _emailController.text.trim(),
+    );
+    bool isSending = false;
+    String? dialogError;
+
+    await showDialog(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setDialogState) => AlertDialog(
+          title: const Text('Reset Password'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Enter your registered email address and we will send you a password reset link.',
+                style: TextStyle(fontSize: 13, color: AppColors.textGrey),
+              ),
+              const SizedBox(height: 14),
+              TextField(
+                controller: resetEmailCtrl,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  labelText: 'Email Address',
+                  prefixIcon: const Icon(Icons.email_outlined),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+              ),
+              if (dialogError != null) ...[
+                const SizedBox(height: 10),
+                Text(
+                  dialogError!,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.red.shade700,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: isSending ? null : () => Navigator.pop(ctx),
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton(
+              onPressed: isSending
+                  ? null
+                  : () async {
+                      final email = resetEmailCtrl.text.trim();
+                      if (email.isEmpty || !email.contains('@')) {
+                        setDialogState(() {
+                          dialogError = 'Please enter a valid email address.';
+                        });
+                        return;
+                      }
+
+                      setDialogState(() {
+                        isSending = true;
+                        dialogError = null;
+                      });
+
+                      try {
+                        await _supabase.auth.resetPasswordForEmail(email);
+                        if (ctx.mounted) Navigator.pop(ctx);
+                        if (mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Password reset link sent to $email. Check your inbox or spam folder.',
+                              ),
+                              backgroundColor: AppColors.primaryTeal,
+                            ),
+                          );
+                        }
+                      } on AuthException catch (e) {
+                        setDialogState(() {
+                          isSending = false;
+                          dialogError = e.message;
+                        });
+                      } catch (_) {
+                        setDialogState(() {
+                          isSending = false;
+                          dialogError = 'Failed to send reset link. Check your internet connection.';
+                        });
+                      }
+                    },
+              child: Text(isSending ? 'Sending...' : 'Send Link'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,7 +269,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: _showResetPasswordDialog,
+                child: const Text(
+                  'Forgot password?',
+                  style: TextStyle(
+                    color: AppColors.primaryTeal,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
